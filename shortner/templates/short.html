@@ -1,0 +1,15 @@
+{##}
+{#  <div class="container">#}
+{#    <div class="jumbotron">#}
+{#      <h1>Make your link shorter</h1>#}
+{#<form method="post" action="/url/">#}
+{#          <label for="url">Url:</label>#}
+{#          <input id = "url" type="text" name="url">#}
+{#<input type="submit" name="" value="proceed"></form></div>#}
+{#  </div>#}
+{% load crispy_forms_tags %}
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Submit</button>
+</form>
