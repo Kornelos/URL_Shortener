@@ -43,6 +43,7 @@ class BaseConverter(object):
             decoded = -decoded
         return decoded
 
+
 base62 = BaseConverter(
     'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz'
 )

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ShortLink
+from .models import ShortLink, Link
 
 # Register your models here.
 # admin.site.register(ShortLink)
@@ -13,3 +13,4 @@ class UrlAdmin(admin.ModelAdmin):
 
 
 admin.site.register(ShortLink, UrlAdmin)
+admin.site.register(Link)
