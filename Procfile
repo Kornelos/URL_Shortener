@@ -1,1 +1,1 @@
-"web: gunicorn urlshrt1:app --log-file -
+"web: gunicorn short:app --log-file -
