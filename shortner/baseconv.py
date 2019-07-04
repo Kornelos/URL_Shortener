@@ -1,3 +1,4 @@
+# Source:  http://www.djangosnippets.org/snippets/1431/
 class BaseConverter(object):
     decode_mapping = {}
 
@@ -42,8 +43,6 @@ class BaseConverter(object):
             decoded = -decoded
         return decoded
 
-bin = BaseConverter('01')
-hexconv = BaseConverter('0123456789ABCDEF')
 base62 = BaseConverter(
     'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz'
 )

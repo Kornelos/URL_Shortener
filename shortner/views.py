@@ -17,19 +17,19 @@ def get_link(request):
                 short = ShortLink.objects.filter(source_link_id=owned_link.id).first()
                 print("Short link = " + short.__str__())
                 # return HttpResponseRedirect(reverse('proceed'))
-                return render(request,'shortner/result.html', {'short_link': short.__str__,
-                                                               'long_link': form.cleaned_data['link_url']})
+                return render(request, 'shortner/result.html', {'short_link': short.short_url,
+                                                                'long_link': form.cleaned_data['link_url']})
             except Link.DoesNotExist:
                 print("Creating new db entry..")
                 link = form.save()
                 link.save()
                 short = ShortLink.objects.create(source_link=link, short_url=base62.from_decimal(link.id))
-                return render(request, 'shortner/result.html', {'short_link': short.__str__,
-                                                               'long_link': form.cleaned_data['link_url']})
+                return render(request, 'shortner/result.html', {'short_link': short.short_url,
+                                                                'long_link': form.cleaned_data['link_url']})
     else:
         form = UrlForm()
 
-    return render(request, 'short.html', {'form': form})
+    return render(request, 'shortner/short.html', {'form': form})
 
 
 def redirect_link(request):

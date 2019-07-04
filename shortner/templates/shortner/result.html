@@ -1,6 +1,2 @@
-<h1>You new link:
-    <a href="{{ short_link }}">
-    {{ request.get_host }}/{{ short_link }}
-    </a> created from: {{ long_link }}
-</h1>
-
+<p>You new link:<a href="{{ short_link }}">{{ request.get_host }}/{{ short_link }}</a><p>
+<p>created from: {{ long_link }}</p>
